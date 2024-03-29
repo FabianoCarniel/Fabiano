@@ -46,13 +46,20 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+        @media (max-width: 600px) {
+            .memory-card {
+                width: calc(50% - 10px); /* 50% da largura menos a margem */
+                height: calc(50% - 10px); /* 50% da altura menos a margem */
+            }
+        }
     </style>
 </head>
 <body>
     <h1>Vamos testar a sua capacidade mental</h1>
     <div class="memory-game"></div>
     <p id="congrats-message" style="display: none;">Droga, parece que você é inteligente mesmo</p>
-   <button id="next-page-button" onclick="window.location.href = 'page4.html';" style="display: none;">Próxima Página</button>
+    <button id="next-page-button" onclick="window.location.href = 'page4.html';" style="display: none;">Próxima Página</button>
 
     <script>
         const cards = document.querySelector('.memory-game');
@@ -127,4 +134,5 @@
     </script>
 </body>
 </html>
+
 
