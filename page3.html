@@ -35,6 +35,10 @@
         .memory-card img {
             max-width: 100%;
             max-height: 100%;
+            display: none;
+        }
+        .memory-card.flipped img {
+            display: block;
         }
         #next-page-button {
             display: none;
@@ -83,7 +87,7 @@
         function flipCard() {
             if (lockBoard) return;
             if (this === firstCard) return;
-            this.querySelector('img').classList.add('flipped');
+            this.classList.add('flipped');
             if (!hasFlippedCard) {
                 hasFlippedCard = true;
                 firstCard = this;
@@ -108,8 +112,8 @@
         function unflipCards() {
             lockBoard = true;
             setTimeout(() => {
-                firstCard.querySelector('img').classList.remove('flipped');
-                secondCard.querySelector('img').classList.remove('flipped');
+                firstCard.classList.remove('flipped');
+                secondCard.classList.remove('flipped');
                 resetBoard();
             }, 1000);
         }
