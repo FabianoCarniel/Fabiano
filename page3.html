@@ -20,9 +20,6 @@
             grid-template-columns: repeat(6, 200px);
             gap: 20px;
             margin-top: 20px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory; /* Adiciona um scroll suave horizontal */
-            -webkit-overflow-scrolling: touch; /* Suporte para scroll suave em dispositivos iOS */
         }
         .memory-card {
             width: 200px;
@@ -55,7 +52,7 @@
     <h1>Vamos testar a sua capacidade mental</h1>
     <div class="memory-game"></div>
     <p id="congrats-message" style="display: none;">Droga, parece que você é inteligente mesmo</p>
-    <button id="next-page-button" onclick="window.location.href = 'page4.html';" style="display: none;">Próxima Página</button>
+   <button id="next-page-button" onclick="window.location.href = 'page4.html';" style="display: none;">Próxima Página</button>
 
     <script>
         const cards = document.querySelector('.memory-game');
