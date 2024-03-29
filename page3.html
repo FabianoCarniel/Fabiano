@@ -17,13 +17,14 @@
         }
         .memory-game {
             display: grid;
-            grid-template-columns: repeat(6, 200px);
+            grid-template-columns: repeat(4, 1fr); /* Alterado para 4 colunas */
+            grid-template-rows: repeat(3, 200px); /* 3 linhas */
             gap: 20px;
             margin-top: 20px;
         }
         .memory-card {
-            width: 200px;
-            height: 200px;
+            width: 100%;
+            height: 100%;
             background-color: black;
             display: flex;
             justify-content: center;
@@ -45,13 +46,6 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-        }
-
-        @media (max-width: 600px) {
-            .memory-card {
-                width: calc(50% - 10px); /* 50% da largura menos a margem */
-                height: calc(50% - 10px); /* 50% da altura menos a margem */
-            }
         }
     </style>
 </head>
