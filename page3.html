@@ -33,7 +33,6 @@
             position: relative;
         }
         .memory-card img {
-            display: none;
             max-width: 100%;
             max-height: 100%;
         }
@@ -53,7 +52,7 @@
     <h1>Vamos testar a sua capacidade mental</h1>
     <div class="memory-game"></div>
     <p id="congrats-message" style="display: none;">Droga, parece que você é inteligente mesmo</p>
-   <button id="next-page-button" onclick="window.location.href = 'page4.html';" style="display: none;">Próxima Página</button>
+    <button id="next-page-button" onclick="window.location.href = 'page4.html';" style="display: none;">Próxima Página</button>
 
     <script>
         const cards = document.querySelector('.memory-game');
@@ -84,7 +83,7 @@
         function flipCard() {
             if (lockBoard) return;
             if (this === firstCard) return;
-            this.querySelector('img').style.display = 'block';
+            this.querySelector('img').classList.add('flipped');
             if (!hasFlippedCard) {
                 hasFlippedCard = true;
                 firstCard = this;
@@ -109,8 +108,8 @@
         function unflipCards() {
             lockBoard = true;
             setTimeout(() => {
-                firstCard.querySelector('img').style.display = 'none';
-                secondCard.querySelector('img').style.display = 'none';
+                firstCard.querySelector('img').classList.remove('flipped');
+                secondCard.querySelector('img').classList.remove('flipped');
                 resetBoard();
             }, 1000);
         }
@@ -128,5 +127,4 @@
     </script>
 </body>
 </html>
-
 
